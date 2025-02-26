@@ -13,8 +13,8 @@ heart_pattern = [
     [0, 0, 0, 1, 0, 0, 0],  # Saturday
 ]
 
-# Set the timezone (adjust as needed)
-timezone = pytz.timezone("America/New_York")  # Example: Eastern Time
+# Set the timezone
+timezone = pytz.timezone("America/New_York")
 
 # Start date for the heart: September 1st (Sunday)
 start_date = datetime(2024, 9, 1)
@@ -22,12 +22,12 @@ start_date = datetime(2024, 9, 1)
 # Skip date that already has a commit
 october_4th = datetime(2024, 10, 4)
 
-# Ensure we're inside a Git repository
+# Verify Git repository
 if not os.path.exists(".git"):
     print("Error: This directory is not a Git repository.")
     exit(1)
 
-# Loop through the 7-week period and create commits
+# Loop through the period and create commits
 for week in range(7):
     for day in range(7):
         try:
